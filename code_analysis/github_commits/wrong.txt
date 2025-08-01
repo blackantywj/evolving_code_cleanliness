@@ -1,0 +1,184 @@
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper c44cb3798245bd3de0157be7997d7125fde19193 676612eb21fc081db1710638
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-metrics-providers/zookeeper-prometheus-metrics/src/main/java/org/apache/zookeeper/metrics/prometheus/PrometheusMetricsProvider.java
+ZOOKEEPER-4798: Secure prometheus support (#2127)
+
+Co-authored-by: purshotam shah <purushah@yahooinc.com>
+Co-authored-by: tison <wander4096@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper d12aba599233b0fcba0b9b945ed3d2f45d4016f0 676612eb21fc081db1710641
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/main/java/org/apache/zookeeper/server/NettyServerCnxn.java
+ZOOKEEPER-4799: Refactor ACL check in 'addWatch' command
+
+As of today, it is impossible to diagnose which watch events are dropped
+because of ACLs.  Let's centralize, systematize, and log the checks at
+the 'process()' site in the Netty and NIO connections.
+
+(These 'process()' methods contain some duplicated code, and should also
+be refactored at some point.  This series does not change them.)
+
+This patch also adds a substantial number of tests in order to avoid
+unexpected regressions.
+
+Co-authored-by: Patrick Hunt <phunt@apache.org>
+Co-authored-by: Damien Diederen <ddiederen@apache.org>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper bc1fc6d36435d3fad7b31642b647dc7680d7866e 676612eb21fc081db1710643
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/main/java/org/apache/zookeeper/server/quorum/QuorumPeer.java
+ZOOKEEPER-4276. Serving only with secureClientPort fails (#2117)
+
+* Support TLS-only ZK server
+
+* Cleanup
+
+* Update documentation according to review comments
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper e2070bed85d8b0c98a5a0045bf92421f473c412e 676612eb21fc081db1710666
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/main/java/org/apache/zookeeper/server/quorum/auth/SaslQuorumServerCallbackHandler.java
+ZOOKEEPER-4753: zookeeper-server: Improvement: Explicit handling of DIGEST-MD5 vs GSSAPI in quorum auth
+
+Before this, the SASL-based quorum authorizer did not explicitly
+distinguish between the DIGEST-MD5 and GSSAPI mechanisms: it was
+simply relying on NameCallback and PasswordCallback for authentication
+with the former and examining Kerberos principals in AuthorizeCallback
+for the latter.
+
+It turns out that some SASL/DIGEST-MD5 configurations cause
+authentication and authorization IDs not to match the expected format,
+and the DIGEST-MD5-based portions of the quorum test suite to fail
+with obscure errors.  (They can be traced to failures to join the
+quorum, but only by looking into detailed logs.)
+
+This patch uses the login module name to determine whether DIGEST-MD5
+or GSSAPI is used, and relaxes the authentication ID check for the
+former.  As a cleanup, it keeps the password-based credential map
+empty when Kerberos principals are expected.  It finally adapts a
+test, and adds a new one, ensuring "weirdly-shaped" credentials only
+cause authentication failures in the GSSAPI case.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper 2edb73a943928e0716b91e8a1d06a9c226fa393c 676612ee21fc081db171067a
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/test/java/org/apache/zookeeper/server/persistence/FileTxnLogTest.java
+ZOOKEEPER-4715: Verify file size and position in testGetCurrentLogSize (#2025)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper 58eed9f5280be1c6a9ccacc47dd6afa65e916ae8 676612ee21fc081db1710681
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/test/java/org/apache/zookeeper/server/CreateTTLTest.java
+ZOOKEEPER-4026: Support `OpCode.create2` in `OpCode.multi`
+
+Currently, nesting `OpCode.create2` in `OpCode.multi` will not get `stat`(ZOOKEEPER-1297). The cause is multifold:
+* `MultiOperationRecord.deserialize` decays `OpCode.create2` to  `OpCode.create`.
+* `DataTree.processTxn` ignores `OpCode.create2`.
+
+This commit complements ZOOKEEPER-1297 to add `stat` for `OpCode.create2` in `OpCode.multi`.
+
+It also adds `CreateOptions` to cover create mode, acl and ttl to avoid massive overloading methods.
+
+Author: Kezhu Wang <kezhuw@gmail.com>
+
+Reviewers: Enrico Olivelli <eolivelli@apache.org>, Damien Diederen <ddiederen@apache.org>
+
+Closes #1978 from kezhuw/ZOOKEEPER-4667-nest-create2-in-multi
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper e8b2fbeb101e22378aa47df291cc9ca6e58e1e8d 676612ee21fc081db171068a
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/main/java/org/apache/zookeeper/server/DataTree.java
+ZOOKEEPER-4472: Remove persistent watches individually  (#2006)
+
+* ZOOKEEPER-4472: Remove persistent watches individually
+
+ZOOKEEPER-4466 supports different watch modes one same path, but there
+are no corresponding `WatcherType`s for persistent watches. Client has
+to resort to `WatcherType.Any` to remove them. This could accidently
+interrupt other watches.
+
+This PR adds `WatcherType.Persistent` and `WatcherType.PersistentRecursive`
+to remove persistent watches individually.
+
+* Assert removing WatcherType::Data from AddWatchMode::Persistent is impossible
+
+* fixup! Assert removing WatcherType::Data from AddWatchMode::Persistent is impossible
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper a64dbf5b06ca1a73dc2ad6c7d31e679e312082aa 676612ee21fc081db171068e
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/main/java/org/apache/zookeeper/server/watch/WatchManager.java
+ZOOKEEPER-4466: Support different watch modes on same path (#1859)
+
+Signed-off-by: Kezhu Wang <kezhuw@gmail.com>
+Co-authored-by: tison <wander4096@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper d79811bf28f00fb1db6ec6002e884af6cfd0d7fc 676612ee21fc081db171069a
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/test/java/org/apache/zookeeper/server/admin/SnapshotAndRestoreCommandTest.java
+ZOOKEEPER-4639: Provide auth support for admin server APIs (#1966)
+
+Author: Li Wang <liwang@apple.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper b069edeb2436a051ad2b18e03fd67ae8ec23875c 676612ee21fc081db17106ad
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/main/java/org/apache/zookeeper/server/persistence/FileSnap.java
+ZOOKEEPER-4570: Admin server API for taking snapshot and stream out data (#1943)
+
+Provides a snapshot command for taking snapshot and streaming out data
+
+Author: Li Wang <liwang@apple.com>
+
+Co-authored-by: Li Wang <liwang@apple.com>
+Co-authored-by: Enrico Olivelli <eolivelli@apache.org>
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/main/java/org/apache/zookeeper/server/persistence/FileTxnSnapLog.java
+ZOOKEEPER-4570: Admin server API for taking snapshot and stream out data (#1943)
+
+Provides a snapshot command for taking snapshot and streaming out data
+
+Author: Li Wang <liwang@apple.com>
+
+Co-authored-by: Li Wang <liwang@apple.com>
+Co-authored-by: Enrico Olivelli <eolivelli@apache.org>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper 99cb20e82743ef73db7257a3f9a4c55bc8acf037 676612f021fc081db17106da
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/gui/ZooInspectorTreeView.java
+ZOOKEEPER-4473: zooInspector root child creates fail with path validate fix
+
+zooInspector root child creates fail with path validate fix.
+create node update UI only if creation success, if fail show message dialog about the reason.
+add basic ZooInspectorManagerImpl tests using mocked zookeeper client.
+
+Author: 67 <67@gd67.com>
+
+Reviewers: Enrico Olivelli <eolivelli@apache.org>, Mate Szalay-Beko <symat@apache.org>
+
+Closes #1818 from iamgd67/ZOOKEEPER-4473
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper a5b6c38edd74b263638817f7b65d057c91d5a888 676612f021fc081db17106dc
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/test/java/org/apache/zookeeper/server/quorum/auth/MiniKdc.java
+ZOOKEEPER-4477: Single Kerberos ticket renewal failure can prevent all future renewals since Java 9
+
+This bug is similar to the one fixed in https://issues.apache.org/jira/browse/KAFKA-12730.
+
+Our Kerberos ticket refresh thread performs re-login by logging out and then logging in again. If
+login fails, we retry after some sleep. Every reLogin() operation performs loginContext.logout()
+and loginContext.login(). If login fails, we end up with two consecutive logouts. This used to
+work in older Java versions, but from Java 9 onwards, this results in a NullPointerException due
+to https://bugs.openjdk.java.net/browse/JDK-8173069. We should check if logout is required before
+attempting logout.
+
+I fixed the issue and added a new unit test to test some ticket renewal scenarios. I managed to
+reproduce the problem in KerberosTicketRenewalTest.shouldRecoverIfKerberosNotAvailableForSomeTime()
+which (before the fix) failed with Java13 but succeeded with Java8.
+
+Author: Mate Szalay-Beko <symat@apache.org>
+
+Reviewers: Enrico Olivelli <eolivelli@apache.org>
+
+Closes #1828 from symat/ZOOKEEPER-4477-master
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/zookeeper 1cc1eb6a2be7323a5c326652d59a070473bb8779 676612f021fc081db17106eb
+>>>>>>>>>>>>>>>>>>>> 文件名: zookeeper-server/src/test/java/org/apache/zookeeper/server/NettyServerCnxnTest.java
+ZOOKEEPER-4453: NettyServerCnxnFactory: allow to configure the early TLS connection drop feature
+
+- add new flag netty.server.earlyDropSecureConnectionHandshakes to turn on/off ZOOKEEPER-3682
+- disable ZOOKEEPER-3682 by default
+- add docs
+- add tests for this patch and for ZOOKEEPER-3682
+
+see https://issues.apache.org/jira/browse/ZOOKEEPER-4453 for more context
+
+Author: Enrico Olivelli <eolivelli@apache.org>
+
+Reviewers: Mate Szalay-Beko <symat@apache.org>
+
+Closes #1800 from eolivelli/fix/ZOOKEEPER-4453-b
+<<<<<<<<<<<<<<<<<<<<

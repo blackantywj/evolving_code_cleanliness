@@ -1,0 +1,967 @@
+>>>>>>>>>>>>>>>>>>>> apache/dubbo 16fc7b55ef20f97d2b5e7b983d4d10eb9afc4c82 63e2018185d52e6dee102430
+>>>>>>>>>>>>>>>>>>>> 文件名: dubbo-rpc/dubbo-rpc-api/src/test/java/org/apache/dubbo/rpc/stub/StubInvocationUtilTest.java
+Remove processing streamObserver in TripleInvoker#invokeUnary (#10398)
+
+* Remove processing streamObserver in TripleInvoker#invokeUnary
+
+* remove unaryCall with streamObserver in StubInvocationUtil
+
+* add Compatible with unaryCall
+
+* add unit test
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/dubbo 62154c5927621bc24782e30fa28bfa78e84e90b7 63e2018585d52e6dee1024f8
+>>>>>>>>>>>>>>>>>>>> 文件名: dubbo-rpc/dubbo-rpc-triple/src/main/java/org/apache/dubbo/rpc/protocol/tri/call/ServerCall.java
+[3.0 Triple] Fix no error signal when channel closed (#9858)
+
+* Fix no error signal when channel closed
+
+* Some reactor
+
+* Fix ut
+
+* Do not send reset when received client rst
+
+* Add more comments
+
+* Do not ignore frame to avoid race condition
+
+* Try fix ut
+
+* Skip assert for debug
+
+* Add service
+
+* Remove context before use
+
+* Fix comment
+>>>>>>>>>>>>>>>>>>>> 文件名: dubbo-rpc/dubbo-rpc-triple/src/main/java/org/apache/dubbo/rpc/protocol/tri/stream/ClientStream.java
+[3.0 Triple] Fix no error signal when channel closed (#9858)
+
+* Fix no error signal when channel closed
+
+* Some reactor
+
+* Fix ut
+
+* Do not send reset when received client rst
+
+* Add more comments
+
+* Do not ignore frame to avoid race condition
+
+* Try fix ut
+
+* Skip assert for debug
+
+* Add service
+
+* Remove context before use
+
+* Fix comment
+>>>>>>>>>>>>>>>>>>>> 文件名: dubbo-rpc/dubbo-rpc-triple/src/main/java/org/apache/dubbo/rpc/protocol/tri/stream/ServerStream.java
+[3.0 Triple] Fix no error signal when channel closed (#9858)
+
+* Fix no error signal when channel closed
+
+* Some reactor
+
+* Fix ut
+
+* Do not send reset when received client rst
+
+* Add more comments
+
+* Do not ignore frame to avoid race condition
+
+* Try fix ut
+
+* Skip assert for debug
+
+* Add service
+
+* Remove context before use
+
+* Fix comment
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/dubbo 1add77ed6ec2872bb5cb8bbd69cdaea56f5b1acb 63e2018785d52e6dee102537
+>>>>>>>>>>>>>>>>>>>> 文件名: dubbo-common/src/main/java/org/apache/dubbo/rpc/model/MethodDescriptor.java
+[3.0-Triple] A reactor for better abstraction and futher stub api (#9708)
+
+* Init
+
+* update'
+
+* Update
+
+* add depressor
+
+* Update
+
+* Update
+
+* Roughly finished server stream
+
+* Move some comment
+
+* Minor clean
+
+* Store serialize type in request
+
+* Try abstract unray/stream
+
+* Fix compile
+
+* Adapt protocol
+
+* Fix add timeout listener NPE
+
+* Fix setIfNull NPE
+
+* Init client executor before invoke
+
+* Flush when send init header
+
+* Fix path
+
+* Fix data frame not end
+
+* Fix class cast err
+
+* Fix no grpc-message returned in trailers
+
+* Fix no delivery
+
+* Fix write idx
+
+* Fix decode
+
+* Fix code is not 0
+
+* Try seperate stream and unary method descriptor
+
+* Add call
+
+* Update call observer
+
+* Adapt client stream and client call
+
+* Fix compile
+
+* Fix compile
+
+* Fix dupliate reuqests
+
+* Remove unused code
+
+* Fix compile
+
+* Fix large header
+
+* Fix error exception
+
+* Fix stream
+
+* Remove generic unpack from call
+
+* Abstract call to reduce code in tri invoker for stub usage
+
+* Set callback executor
+
+* Clean unused method
+
+* Adapt server call
+
+* Remove set decompressor method
+
+* Pass unary client
+
+* Fix npe at server side when unary call
+
+* Pass unary server
+
+* Move client call static methods to standalone file
+
+* Fix biz error did not send EOS
+
+* Fix duplicate send message methods in server call
+
+* Do not send message when status is ok
+
+* Support requestN()
+
+* Close listener in delivery process
+
+* Try set listener before data
+
+* Fix multiple decdoe
+
+* some code refactoring
+
+* Release accumulate after close decoder
+
+* Extract inner lambda
+
+* Abstract managed stream observer
+
+* Support cancel
+
+* Basicly add cancel
+
+* Support bi-cancel
+
+* some code refactoring
+
+* Add client cancel
+
+* Support cancel server stream
+
+* wrapper client SerializingExecutor
+
+* Fix large size header
+
+* Add client decompressor
+
+* Support server set compression
+
+* fix multi thread decoder
+
+* Ignore version 1.0.0
+
+* Extract single kv method
+
+* Add state check in stream observer
+
+* Fix cancel server stream
+
+* Default flush write queue
+
+* Simplify ssl judge
+
+* fix defaultFuture error
+
+* Simplify defaultFuture2
+
+* fix license
+
+* fix style
+
+* fix style
+
+* Generate throwable in client executor
+
+* Close h2 channel when client timeout
+
+* refactor grpc-status-detail handler
+
+* Minor code clean up
+
+* Rename grpc status to rpc status
+
+* Abstract request meta to reduce arguments passing
+
+* Abstract call stream methods
+
+* Fix status with description
+
+* Minor fix
+
+* Try 1.0.0 version by default
+
+* Format code
+
+* Rebase 3.0
+
+* backpress
+
+* refactor run on eventLoop
+
+* Enhance error handle
+
+* Remove tranport state
+
+* Add doc
+
+* refactor thread
+
+* Add client stream simple ut
+
+* fix thread
+
+* Fix status from trailers
+
+* Update UT
+
+* Use transport listener instead of stream
+
+* Move netty operations to transport package
+
+* fix style
+
+* Fix some ut
+
+* Fix ut format
+
+* Ignore protocol test
+
+* Add client stream ut
+
+* Fix wrapper it
+
+* Seperate wrap response from observer
+
+* Some operations are removed from the thread
+
+* Import timeout key
+
+* Use millis to judge timeout
+
+* Fix protocol error
+
+* fix style
+
+* fix style
+
+* Add error log
+
+* delete  defaultSerialization
+
+* override TripleInvoker getCallbackExecutor
+
+* Add decoder test
+
+* Format test
+
+* Add Client response ut
+
+* fix tri callbackExecutor
+
+* Remove unused test
+
+* Remove lookup executor in TripleInvoker
+
+* Format
+
+* Fix executor
+
+* Fix UT
+
+* Fix return type in server call
+
+* ClientCall remove url param
+
+Co-authored-by: earthchen <earthchen1996@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/dubbo 7a5d04a16923b2f3fbac943ca9254dc9f9debabd 63e2018785d52e6dee102542
+>>>>>>>>>>>>>>>>>>>> 文件名: dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/client/AbstractServiceDiscovery.java
+[3.0] Fix concurrency issues of service discovery (#9684)
+<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>> apache/flink 94fba321d4e29f996c8234c9dcb3b7a93ad8a593 63e38e0b4f02ef1940f8b5fa
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/main/java/org/apache/flink/table/planner/utils/OperationConverterUtils.java
+[FLINK-22318][table] Support RENAME column name for ALTER TABLE statement, optimize the code implementation
+
+This closes #19329
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 37995f298033f6f3a9df47254cdb8e09f3716dcd 63e38e0b4f02ef1940f8b606
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-sql-parser/src/main/java/org/apache/flink/sql/parser/ddl/SqlCreateTable.java
+[FLINK-22315][sql-parser] Support syntax for ALTER TABLE ADD/MODIFY column with nested type
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 6e5f8694b66d8dea8ae2926adafdb610c09d9b88 63e38e0b4f02ef1940f8b623
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/main/java/org/apache/flink/runtime/security/token/hadoop/KerberosDelegationTokenManager.java
+[FLINK-30422][runtime][security] Generalize token framework provider API
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 3b6d08e57f644cddcdac1fb5a110d44172652c3a 63e38e0e4f02ef1940f8b667
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/RocksDBOperationUtils.java
+[FLINK-29928][runtime, state] Share RocksDB memory across TM slots
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 67fd0b8e9957b96346ca80551ef5e9e4d7a0518c 63e38e104f02ef1940f8b703
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-core/src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSerializationUtil.java
+[FLINK-29807][serializers] Clean up serialization stack after removal of TypeSerializerSnapshotConfig
+
+Reading/writing older version is no longer supported/needed
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 5c2533295ad82eea141bf6fadb7842290b927203 63e38e104f02ef1940f8b704
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/main/java/org/apache/flink/runtime/state/metainfo/StateMetaInfoSnapshotReadersWriters.java
+[FLINK-29807][streaming][checkpointing] Remove no longer needed and used StateMetaInfoReaders
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 9bf0d9f2c2bcb2bc0c8ab6228bb0a9e76e10ad70 63e38e104f02ef1940f8b705
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-core/src/main/java/org/apache/flink/api/common/typeutils/base/EnumSerializer.java
+[FLINK-29807][streaming][checkpointing] Remove long deprecated TypeSerializerConfigSnapshot class
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-core/src/test/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializerCompatibilityTest.java
+[FLINK-29807][streaming][checkpointing] Remove long deprecated TypeSerializerConfigSnapshot class
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/streamrecord/StreamElementSerializer.java
+[FLINK-29807][streaming][checkpointing] Remove long deprecated TypeSerializerConfigSnapshot class
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink a901911266bc1e4fde3c1b4e81a52e60c4469a50 63e38e194f02ef1940f8b8a1
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-tests/src/test/java/org/apache/flink/test/streaming/runtime/CacheITCase.java
+[FLINK-28860][datastream] Cache consumption in stream mode recompute result in case of cache miss
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 9955c85a53d10c85fbca57da33777b940f2e69a9 63e38e1b4f02ef1940f8b8b0
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-java/src/test/java/org/apache/flink/api/java/functions/SemanticPropertiesProjectionTest.java
+[FLINK-28659][flink-java][JUnit5 Migration] Migrate flink-java to use junit5.
+
+This closes #20715.
+
+Co-authored-by: Sergey Nuyanzin <sergey.nuyanzin@aiven.io>
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-java/src/test/java/org/apache/flink/api/java/utils/RequiredParametersTest.java
+[FLINK-28659][flink-java][JUnit5 Migration] Migrate flink-java to use junit5.
+
+This closes #20715.
+
+Co-authored-by: Sergey Nuyanzin <sergey.nuyanzin@aiven.io>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink eb69b11532e6ac3fafd74849ed5f8a2c1273b71c 63e38e1b4f02ef1940f8b904
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-streaming-java/src/test/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironmentComplexConfigurationTest.java
+[FLINK-29014][streaming-java][table] Improve end-to-end story about PipelinesOptions.JARS
+
+This closes #20633.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 07858933aac71715f9f39901cab7716d298dd28f 63e38e1d4f02ef1940f8b95e
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/pyflink/common/serialization.py
+[hotfix][python] Move json/avro/csv SerializationSchema implementations into the corresponding files
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 10acb641a036ae9d171452695b660c46d97c865a 63e38e1d4f02ef1940f8b968
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-runtime/src/main/java/org/apache/flink/table/runtime/operators/join/SortMergeJoinOperator.java
+[FLINK-26929][table-runtime] Introduce adaptive hash join strategy for batch hash join (#20365)
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-runtime/src/test/java/org/apache/flink/table/runtime/operators/join/Int2HashJoinOperatorTest.java
+[FLINK-26929][table-runtime] Introduce adaptive hash join strategy for batch hash join (#20365)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 1c40dc15fbc29e8e5e514565109a3fb05b47a83f 63e38e1f4f02ef1940f8b9b0
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/pyflink/common/types.py
+[FLINK-28827][python] Complete DataType support in DataStream API (#20460)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 4cf0b81d4f492b49d12aa317f3dfbc6e50d72ec8 63e38e1f4f02ef1940f8b9b1
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/pyflink/datastream/connectors/tests/test_file_system.py
+[hotfix][python][tests] Split the test cases of connectors & formats into separate files
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink c5c66af680eaf3aae6fbcb6dc48e8d6b66ade8c9 63e38e1f4f02ef1940f8b9be
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-sql-client/src/main/java/org/apache/flink/table/client/gateway/context/SessionContext.java
+[FLINK-27790][table] Port ADD JAR & SHOW JARS syntax implementation from SqlClient to TableEnvironment side
+
+This closes #20361
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 5f2d088a2713ced5c6ce072db92f4378f73bc739 63e38e214f02ef1940f8ba09
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-formats/flink-orc/src/main/java/org/apache/flink/orc/OrcFileFormatFactory.java
+[FLINK-27988][table-planner] Let HiveTableSource extend from SupportStatisticsReport
+
+This closes #20084
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-formats/flink-parquet/src/main/java/org/apache/flink/formats/parquet/ParquetFileFormatFactory.java
+[FLINK-27988][table-planner] Let HiveTableSource extend from SupportStatisticsReport
+
+This closes #20084
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 6a95672db9cf23c9110ec9b0d4701e9c1e3acfa1 63e38e244f02ef1940f8ba4d
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-sql-gateway/src/test/java/org/apache/flink/table/gateway/service/SqlGatewayServiceStatementITCase.java
+[FLINK-28152][sql-gateway][hive] Allow executing statement and fetching results for the HiveServer2Endpoint
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 7ea31cfcf360bc40b2445c72aae14746577aff9d 63e38e244f02ef1940f8ba6e
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/pyflink/fn_execution/datastream/operations.py
+[FLINK-28549][python] Support DataStream PythonProcessOperator in Thread Mode
+
+This closes #20276.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 5f0c4ab91a8ffc80ff04d0324934b2993fc5b533 63e38e264f02ef1940f8ba9b
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/HashBasedDataBuffer.java
+[FLINK-28512][network] Select HashBasedDataBuffer and SortBasedDataBuffer dynamically based on the number of network buffers can be allocated for SortMergeResultPartition
+
+This closes #20315.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 51010a100ce7c1403c99bf639ea8fc1aac7ba135 63e38e264f02ef1940f8bacc
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/test/java/org/apache/flink/runtime/scheduler/SchedulerTestingUtils.java
+[hotfix][tests] Merge DefaultSchedulerBuilder and AdaptiveBatchSchedulerBuilder
+
+The extending AdaptiveBatchSchedulerBuilder is in a good shape, which requires hack logics to create AdaptiveBatchScheduler. Merging them can make it simpler to create different schedulers.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 94915d6c9e1b3a4e5f419d405a7d60c19b6bd483 63e38e284f02ef1940f8bb27
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/main/java/org/apache/flink/runtime/rest/messages/job/SubtaskExecutionAttemptDetailsInfo.java
+[FLINK-28310][rest] Introduce aggregating task metrics
+
+We add AggregatedTaskDetailsInfo to JobVertexTaskManagersHandler and JobVertexDetailsHandler
+
+This closes #20123.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 40efeb9314fe70bbc600a9131a7031ac193f246d 63e38e2a4f02ef1940f8bb74
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/pyflink/pyflink_gateway_server.py
+[FLINK-28194][python] Remove avro sql jar workaround (#20045)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 41ac1ba13679121f1ddf14b26a36f4f4a3cc73e4 63e38e2d4f02ef1940f8bbc3
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/test/java/org/apache/flink/runtime/rpc/FencedRpcEndpointTest.java
+[FLINK-27737][rpc] Remove legacy support for unfenced executor in FencedRpcEndpoint
+
+This closes #19938
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 7f7bee70e3ac0d9fb27d7e09b41d6396b748dada 63e38e2d4f02ef1940f8bbd6
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/main/java/org/apache/flink/table/planner/plan/nodes/exec/stream/StreamExecMatch.java
+[FLINK-24865][CEP] Support MATCH_RECOGNIZE in Batch mode
+
+This closes #18408
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 22f9a6d03f5337ffa4f322a526aecefba1539248 63e38e2d4f02ef1940f8bbfb
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-connectors/flink-connector-hive/src/test/java/org/apache/flink/table/functions/hive/HiveSimpleUDFTest.java
+[FLINK-15854][hive] Use the new type inference for Hive UDTF (#18958)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink f1b4742b87de6175289539ca3c83c4e33ba4e825 63e38e2f4f02ef1940f8bc37
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-common/src/test/java/org/apache/flink/table/types/LogicalCommonTypeTest.java
+[FLINK-27672][tests][table] Migrate flink-table-common to JUnit5
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-common/src/test/java/org/apache/flink/table/types/LogicalTypeCastAvoidanceTest.java
+[FLINK-27672][tests][table] Migrate flink-table-common to JUnit5
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 5b8dc104f76f89e1774e0446788cb29ba7788d79 63e38e2f4f02ef1940f8bc42
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-connectors/flink-connector-hive/src/test/java/org/apache/flink/connectors/hive/HiveDynamicTableFactoryTest.java
+[FLINK-27185][connector] Convert connector-hive module to assertj
+
+Co-authored-by: slinkydeveloper <francescoguard@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink e0a178f75418919b6aa45af9647e1f09e08f761b 63e38e2f4f02ef1940f8bc43
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-connectors/flink-connector-elasticsearch-base/src/test/java/org/apache/flink/streaming/connectors/elasticsearch/table/IndexGeneratorFactoryTest.java
+[FLINK-27185][connector] Convert connector-elasticsearch modules to assertj
+
+Co-authored-by: slinkydeveloper <francescoguard@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 05676c4d525f4c9b01c2c048ad263831617c8927 63e38e314f02ef1940f8bcb3
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMasterGateway.java
+[FLINK-27460][runtime] Remove unused notifyPartitionDataAvailable process
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 171d410c7b213e876d5a2df791e9e6e961465c7a 63e38e324f02ef1940f8bcea
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-metrics/flink-metrics-prometheus/src/test/java/org/apache/flink/metrics/prometheus/PrometheusReporterTest.java
+[FLINK-23659][metrics][prometheus] Cleanup code
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 7b48eae6b448963e0aed2b33d06e105311a48e05 63e38e334f02ef1940f8bcf3
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-state-backends/flink-statebackend-changelog/src/main/java/org/apache/flink/state/changelog/ChangelogStateBackend.java
+[FLINK-23252][changelog] Support recovery from checkpoint after disabling changelog backend
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 8212230414f0c49a9f5b636bfc5101417e921a66 63e38e344f02ef1940f8bd43
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-api-java-bridge/src/main/java/org/apache/flink/table/descriptors/SchemaValidator.java
+[FLINK-27196][table] Remove SerializationSchemaFactory, DeserializationSchemaFactory and TableFormatFactory
+
+Signed-off-by: slinkydeveloper <francescoguard@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 02f09845cef2d337c04b7032d08007b73555d976 63e38e364f02ef1940f8bd7f
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/src/main/java/org/apache/flink/python/util/PythonConfigUtil.java
+[FLINK-26190][python] Remove getTableConfig from ExecNodeConfiguration
+
+This closes #19333.
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/src/test/java/org/apache/flink/table/runtime/operators/python/aggregate/PythonStreamGroupAggregateOperatorTest.java
+[FLINK-26190][python] Remove getTableConfig from ExecNodeConfiguration
+
+This closes #19333.
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/src/test/java/org/apache/flink/table/runtime/operators/python/aggregate/arrow/stream/StreamArrowPythonRowTimeBoundedRowsOperatorTest.java
+[FLINK-26190][python] Remove getTableConfig from ExecNodeConfiguration
+
+This closes #19333.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink b8cdb8d6b6b879faa7f0454ba9145af8190e3c80 63e38e384f02ef1940f8bdee
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/main/java/org/apache/flink/table/planner/plan/nodes/exec/stream/StreamExecGlobalGroupAggregate.java
+[hotfix][table-planner] Remove consumed options not affecting the topology.
+
+Remove `table.exec.source.idle-timeout` and `table.exec.state.ttl`.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 948bfda0a7ba1630921c8958319c5136b2df8c1a 63e38e3a4f02ef1940f8be24
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-filesystems/flink-s3-fs-hadoop/src/test/java/org/apache/flink/fs/s3hadoop/HadoopS3RecoverableWriterITCase.java
+[FLINK-11388][fs] Add abstract test classes for recoverable writers (s3/oss)
+
+This closes #19181
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink d07fd36af66ebdf7200650f387489018bd9df454 63e38e3a4f02ef1940f8be28
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/test/java/org/apache/flink/table/planner/functions/ConstructedAccessFunctionsITCase.java
+[FLINK-26249][test-utils] Refactor BuiltIn(Aggregate)FunctionTestBase to JUnit 5 and run tests in parallel
+
+This closes #18940.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink b643feedc88e660df7c333870454763f011d3f01 63e38e3a4f02ef1940f8be2f
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/src/main/java/org/apache/flink/table/runtime/operators/python/scalar/EmbeddedPythonScalarFunctionOperator.java
+[FLINK-26727][python] Fix the implementation of sub-interpreter in Thread Mode
+
+This closes #19150.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink b9593715f35640154615df0098ac7459f37911c3 63e38e3c4f02ef1940f8be81
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-streaming-java/src/test/java/org/apache/flink/streaming/api/operators/source/SourceOperatorEventTimeTest.java
+[FLINK-26018][connector/common] Create per-split output on split addition in SourceOperator
+
+This change could avoid watermark being pushed forward by records from the first split in the first fetch when multiple splits are assigned to the source operator.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink fafac0885aaeb592c49afce6baa5deac11e09666 63e38e3d4f02ef1940f8bea9
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-connectors/flink-connector-files/src/main/java/org/apache/flink/connector/file/sink/compactor/operator/CompactorOperatorStateHandler.java
+[FLINK-26580][connectors/filesystem] CompactorOperatorStateHandler can accept multiple remaining in-progress files from different buckets.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 9d92aad2a9cb19a68acb02c4238fb1947b1fe094 63e38e3d4f02ef1940f8becd
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-formats/flink-avro/src/test/java/org/apache/flink/formats/avro/typeutils/AvroTypeExtractionTest.java
+Revert "[FLINK-26232][avro] Migrate tests to JUnit5"
+
+This reverts commit a3dff681d511a56f5d2a557e1804bbd5a10757ea.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 1e7d45d53b7ea7b9cfadf2e293ba790f3a9e90c3 63e38e3f4f02ef1940f8befd
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/test/java/org/apache/flink/runtime/checkpoint/PendingCheckpointStatsTest.java
+[FLINK-25958][refactor][runtime] Separated the logic of creating and reporting the statistic in order to use it in different place in the future
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 2c9d64e34cfd3025c87c1d3bbd2d1b596df11691 63e38e3f4f02ef1940f8bf00
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/operators/sink/SinkWriterOperator.java
+[FLINK-26403][datastream] Fixes the endOfInput logic of sink writer and committer.
+
+SinkWriterOperator should emit all the pending committables on endOfInput,
+and CommitterOperator should commit all committables when the final checkpoint
+is completed or on endOfInput if there's no final checkpoint.
+
+This closes #18938.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 92eb824ba1e3ac4a6ee28ab4a68e508766236dab 63e38e3f4f02ef1940f8bf13
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-api-java/src/main/java/org/apache/flink/table/api/EnvironmentSettings.java
+[FLINK-26434][table] Remove 'table.planner' config option and remaining Blink references
+
+This closes #18886.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 32700d98fff5aa69fd159c22093a13c70dc09e42 63e38e414f02ef1940f8bf5d
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/test/java/org/apache/flink/table/planner/plan/nodes/exec/serde/RexNodeSerdeTest.java
+[FLINK-25385][table-planner] Clean up RexNodeSerdeTest
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink abaef796158f1a5d67261680fe62436aad5a403a 63e38e414f02ef1940f8bf9f
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/main/java/org/apache/flink/runtime/scheduler/adaptive/Executing.java
+[FLINK-21439][runtime] Move FailureResult into separate class
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 5180e83ec01236ecce47a56951daf2a34eb4a1f6 63e38e464f02ef1940f8c050
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-runtime/src/main/java/org/apache/flink/runtime/scheduler/adaptive/StopWithSavepoint.java
+[FLINK-25755][runtime] Introduce shared state transition interfaces
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 155657e60607913b679827123cc3a0c0281d5c76 63e38e464f02ef1940f8c053
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-rpc/flink-rpc-core/src/main/java/org/apache/flink/runtime/rpc/messages/RemoteRpcInvocation.java
+[FLINK-25742][akka] Remove the serialization of rpc invocation at Flink side.
+
+This closes #18434.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 942872c0f16c79351078461eb1ede206bf629507 63e38e4a4f02ef1940f8c111
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/main/java/org/apache/flink/table/planner/plan/nodes/exec/serde/ExecNodeGraphJsonPlanGenerator.java
+[FLINK-25386][table-planner] Harden persisted plan for catalog tables
+
+This closes #18427.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink d809cb4b26c0743f0f944a12c21d52d61b28bdd3 63e38e4b4f02ef1940f8c125
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/main/java/org/apache/flink/table/planner/expressions/converter/ExpressionConverter.java
+[FLINK-25826][table-planner] Handle symbols at a central place with serializable format
+
+This closes #18529.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 51eb386048484502f88d8806b75c17b04b91a613 63e38e4d4f02ef1940f8c140
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/pyflink/fn_execution/table/state_data_view.py
+[FLINK-25719][python] Support General Python UDF in Thread Mode
+
+This closes #18418.
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-python/src/main/java/org/apache/flink/streaming/api/operators/python/AbstractPythonFunctionOperator.java
+[FLINK-25719][python] Support General Python UDF in Thread Mode
+
+This closes #18418.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 64787a6d76afd33ebede930fd2c43797984751c2 63e38e4d4f02ef1940f8c18c
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-connectors/flink-connector-kinesis/src/test/java/org/apache/flink/streaming/connectors/kinesis/table/KinesisDynamicTableFactoryTest.java
+[FLINK-24905][connector/kinesis] Adding KinesisDataStreams Table API sink connector, moving related utils from legacy connector to new connector, modifying end-to-end test.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink de7cccc26f97a0e0f3295d32d374b07577110d06 63e38e4f4f02ef1940f8c1b4
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-connectors/flink-connector-jdbc/src/main/java/org/apache/flink/connector/jdbc/catalog/PostgresCatalog.java
+[FLINK-15352][connector-jdbc] Develop MySQLCatalog to connect Flink with MySQL tables and ecosystem.
+
+This closes #16962.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 6d52d105b3fb3e3eb2d24807da07ed210b26670e 63e38e544f02ef1940f8c257
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-table/flink-table-planner/src/test/java/org/apache/flink/table/planner/plan/nodes/exec/serde/RelDataTypeSerdeTest.java
+[FLINK-25518][table-planner] Harden JSON utilities for serde of the persisted plan
+
+- Fixes JsonSerdeUtil to create just one instance of ObjectMapper.
+- Removes FlinkDeserializationContext as SerdeContext is now passed through
+  the Jackson built-in DeserializationContext.
+- Removes all usages of ObjectMapper within the Deserializers, replacing
+  them with proper usage of DeserializationContext.
+
+This closes #18264.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink 76407f231220591d30c046c0661cf4bb09de90f8 63e38e544f02ef1940f8c25a
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-connectors/flink-connector-files/src/main/java/org/apache/flink/connector/file/table/FileSystemConnectorOptions.java
+[hotfix][connector-files][connector-hive] Move Hive specific configs out of FileSystemConnectorOptions
+
+This closes #18177.
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/flink fc44a6dee8338c4e4af1e3cecf4512c8bf11ae67 63e38e544f02ef1940f8c265
+>>>>>>>>>>>>>>>>>>>> 文件名: flink-end-to-end-tests/flink-end-to-end-tests-common/src/main/java/org/apache/flink/tests/util/flink/container/FlinkContainersBuilder.java
+[FLINK-25340][testutils] Remove JM temp files before stopping container to avoid file permission issues
+
+Co-authored-by: Fabian Paul <fabianpaul@ververica.com>
+<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>> apache/kafka 44b3177a087ff809a9d95a27b63b10e00aa4da7d 63e248603cf98b95e17a4620
+>>>>>>>>>>>>>>>>>>>> 文件名: metadata/src/main/java/org/apache/kafka/controller/BrokersToIsrs.java
+KAFKA-14457; Controller metrics should only expose committed data (#12994)
+
+The controller metrics in the controllers has three problems. 1) the active controller exposes uncommitted data in the metrics. 2) the active controller doesn't update the metrics when the uncommitted data gets aborted. 3) the controller doesn't update the metrics when the entire state gets reset.
+
+We fix these issues by only updating the metrics when processing committed metadata records and reset the metrics when the metadata state is reset.
+
+This change adds a new type `ControllerMetricsManager` which processes committed metadata records and updates the metrics accordingly. This change also removes metrics updating responsibilities from the rest of the controller managers. 
+
+Reviewers: Ron Dagostino <rdagostino@confluent.io>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka 29c09e2ca199386efbcb05cdfb10b7376b956233 63e248603cf98b95e17a4633
+>>>>>>>>>>>>>>>>>>>> 文件名: metadata/src/main/java/org/apache/kafka/controller/ClientQuotaControlManager.java
+MINOR: ControllerServer should use the new metadata loader and snapshot generator (#12983)
+
+This PR introduces the new metadata loader and snapshot generator. For the time being, they are
+only used by the controller, but a PR for the broker will come soon.
+
+The new metadata loader supports adding and removing publishers dynamically. (In contrast, the old
+loader only supported adding a single publisher.) It also passes along more information about each
+new image that is published. This information can be found in the LogDeltaManifest and
+SnapshotManifest classes.
+
+The new snapshot generator replaces the previous logic for generating snapshots in
+QuorumController.java and associated classes. The new generator is intended to be shared between
+the broker and the controller, so it is decoupled from both.
+
+There are a few small changes to the old snapshot generator in this PR. Specifically, we move the
+batch processing time and batch size metrics out of BrokerMetadataListener.scala and into
+BrokerServerMetrics.scala.
+
+Finally, fix a case where we are using 'is' rather than '==' for a numeric comparison in
+snapshot_test.py.
+
+Reviewers: David Arthur <mumrah@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka 40af3a74507cce9155f4fb4fca317d3c68235d78 63e248623cf98b95e17a467a
+>>>>>>>>>>>>>>>>>>>> 文件名: connect/mirror/src/main/java/org/apache/kafka/connect/mirror/MirrorConnectorConfig.java
+KAFKA-14413: Separate MirrorMaker configurations for each connector (#12899)
+
+
+Reviewers: Luke Chen <showuon@gmail.com>, Chris Egerton <fearthecellos@gmail.com>, Christo Lolov  <christo_lolov@yahoo.com>
+>>>>>>>>>>>>>>>>>>>> 文件名: connect/mirror/src/test/java/org/apache/kafka/connect/mirror/MirrorConnectorConfigTest.java
+KAFKA-14413: Separate MirrorMaker configurations for each connector (#12899)
+
+
+Reviewers: Luke Chen <showuon@gmail.com>, Chris Egerton <fearthecellos@gmail.com>, Christo Lolov  <christo_lolov@yahoo.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka bdf2cdb27fa39c30171a0e63641cd8e8b851fe0c 63e248683cf98b95e17a473b
+>>>>>>>>>>>>>>>>>>>> 文件名: connect/runtime/src/test/java/org/apache/kafka/connect/runtime/WorkerTaskTest.java
+KAFKA-14132: Migrate some Connect tests from EasyMock/PowerMock to Mockito (#12615)
+
+Reviewers: Chris Egerton <chrise@aiven.io>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka 06f47c3b517f5c96c1bd981369843f3483947197 63e2486b3cf98b95e17a47d2
+>>>>>>>>>>>>>>>>>>>> 文件名: streams/src/main/java/org/apache/kafka/streams/processor/internals/TaskExecutor.java
+KAFKA-10199: Further refactor task lifecycle management (#12439)
+
+1. Consolidate the task recycle procedure into a single function within the task. The current procedure now becomes: a) task.recycleStateAndConvert, at end of it the task is in closed while its stateManager is retained, and the manager type has been converted; 2) create the new task with old task's fields and the stateManager inside the creators.
+2. Move the task execution related metadata into the corresponding TaskExecutionMetadata class, including the task idle related metadata (e.g. successfully processed tasks); reduce the number of params needed for TaskExecutor as well as Tasks.
+3. Move the task execution related fields (embedded producer and consumer) and task creators out of Tasks and migrated into TaskManager. Now the Tasks is only a bookkeeping place without any task mutation logic.
+4. When adding tests, I realized that we should not add task to state updater right after creation, since it was not initialized yet, while state updater would validate that the task's state is already restoring / running. So I updated that logic while adding unit tests.
+
+Reviewers: Bruno Cadonna <cadonna@apache.org>
+>>>>>>>>>>>>>>>>>>>> 文件名: streams/src/main/java/org/apache/kafka/streams/processor/internals/Tasks.java
+KAFKA-10199: Further refactor task lifecycle management (#12439)
+
+1. Consolidate the task recycle procedure into a single function within the task. The current procedure now becomes: a) task.recycleStateAndConvert, at end of it the task is in closed while its stateManager is retained, and the manager type has been converted; 2) create the new task with old task's fields and the stateManager inside the creators.
+2. Move the task execution related metadata into the corresponding TaskExecutionMetadata class, including the task idle related metadata (e.g. successfully processed tasks); reduce the number of params needed for TaskExecutor as well as Tasks.
+3. Move the task execution related fields (embedded producer and consumer) and task creators out of Tasks and migrated into TaskManager. Now the Tasks is only a bookkeeping place without any task mutation logic.
+4. When adding tests, I realized that we should not add task to state updater right after creation, since it was not initialized yet, while state updater would validate that the task's state is already restoring / running. So I updated that logic while adding unit tests.
+
+Reviewers: Bruno Cadonna <cadonna@apache.org>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka 38b08dfd3384a04b73e236c83f1e3ce0fffeda45 63e2486d3cf98b95e17a4804
+>>>>>>>>>>>>>>>>>>>> 文件名: streams/src/main/java/org/apache/kafka/streams/processor/internals/metrics/TaskMetrics.java
+MINOR: revert KIP-770 (#12383)
+
+KIP-770 introduced a performance regression and needs some re-design.
+
+Needed to resolve some conflict while reverting.
+
+This reverts commits 1317f3f77a9e1e432e7a81de2dcb88365feeac43 and 0924fd3f9f75c446310ed1e97b44bbc3f33c6c31.
+
+Reviewers:  Sagar Rao <sagarmeansocean@gmail.com>, Guozhang Wang <guozhang@confluent.io>
+>>>>>>>>>>>>>>>>>>>> 文件名: streams/src/test/java/org/apache/kafka/streams/processor/internals/metrics/TaskMetricsTest.java
+MINOR: revert KIP-770 (#12383)
+
+KIP-770 introduced a performance regression and needs some re-design.
+
+Needed to resolve some conflict while reverting.
+
+This reverts commits 1317f3f77a9e1e432e7a81de2dcb88365feeac43 and 0924fd3f9f75c446310ed1e97b44bbc3f33c6c31.
+
+Reviewers:  Sagar Rao <sagarmeansocean@gmail.com>, Guozhang Wang <guozhang@confluent.io>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka 46efb72600e26ac4211a2defac1ff44f8734b404 63e2486f3cf98b95e17a48a0
+>>>>>>>>>>>>>>>>>>>> 文件名: streams/src/main/java/org/apache/kafka/streams/kstream/internals/KStreamWindowAggregate.java
+KAFKA-13785: [7/N][Emit final] emit final for sliding window (#12135)
+
+This is a copy PR of #12037: Implementation to emit final for sliding window agg. This is authored by lihaosky.
+
+Reviewers: Matthias J. Sax <matthias@confluent.io>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka bf7cd675f8b35b806b1414c68479e69055df4a91 63e248713cf98b95e17a48c3
+>>>>>>>>>>>>>>>>>>>> 文件名: server-common/src/test/java/org/apache/kafka/server/common/MetadataVersionTest.java
+MINOR: Remove duplicated test cases in MetadataVersionTest (#12116)
+
+These tests belongs to ApiVersionsResponseTest, and accidentally copied them to MetadataVersionTest when working on #12072.
+
+Reviewer: Luke Chen <showuon@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka 06ca4850c5b2b12e972f48e03fe4f9c1032f9a3e 63e248763cf98b95e17a49a4
+>>>>>>>>>>>>>>>>>>>> 文件名: streams/src/test/java/org/apache/kafka/streams/processor/internals/RepartitionWithMergeOptimizingTest.java
+KAFKA-13666 Don't Only ignore test exceptions for windows OS for certain tests. (#11752)
+
+Tests are swallowing exceptions for supported operating systems, which could hide regressions.
+
+Co-authored-by: Rob Leland <rleland@apache.org>
+
+Reviewer: Bruno Cadonna <cadonna@apache.org>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/kafka 99310360a589ccb28f7636b714e98e2e7c5a5110 63e248763cf98b95e17a49ba
+>>>>>>>>>>>>>>>>>>>> 文件名: streams/src/test/java/org/apache/kafka/streams/integration/RangeQueryIntegrationTest.java
+KAFKA-12939: After migrating processors, search the codebase for missed migrations (#11534)
+
+Migrated internal usages that had previously been marked with TODO suppressions.
+
+Reviewer: John Roesler<vvcephei@apache.org>
+<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>> apache/rocketmq a68078fef8315a0deeae32af42a029ccd2fa76a4 63e4b61e6045f731a2a0ccdd
+>>>>>>>>>>>>>>>>>>>> 文件名: broker/src/main/java/org/apache/rocketmq/broker/BrokerStartup.java
+[ISSUE #5484] Replace logging module with the shaded logback (#5540)
+
+* Replace logging module with the shaded logback
+
+* Add license header
+
+* Fix bazel compile issue
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/rocketmq 809ff6b3e045d6ccd0899f756822b2d7dd65f6c0 63e4b61e6045f731a2a0cce8
+>>>>>>>>>>>>>>>>>>>> 文件名: broker/src/main/java/org/apache/rocketmq/broker/BrokerStartup.java
+[ISSUE #5484] Replace Logging Module with Shaded Logback (#5524)
+
+* Remove ClientLogger
+
+* WIP
+
+* WIP
+
+* Rename logger to log
+
+* Make it compile
+
+* WIP
+
+* Fix bazel to use shaded slf4j
+
+* Fix DeleteExpiredCommitLogSubCommandTest
+
+* Fix pom.xml duplication
+
+* Fix maven deps
+
+* Add test logback configuration file
+
+* Fix unit test output
+
+* Fix logback configuration file
+
+* All logging are made on top of slf4j
+
+* Fix test log configuration file name
+
+* Fix test log configuration file name for test module
+
+* All logging are shaded slf4j targeted
+
+* DLedger has an explicit dependency on slf4j
+
+* Fix DLedger
+
+* Fix DLeader issue
+
+* Move logback configuration files to each module
+
+Co-authored-by: Li Zhanhui <lizhanhui@gmail.com>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/rocketmq 06a54969333f8c5b1e6cba32a1b16d2fb9b088d9 63e4b6206045f731a2a0cd22
+>>>>>>>>>>>>>>>>>>>> 文件名: test/src/main/java/org/apache/rocketmq/test/util/MQAdminTestUtils.java
+[ISSUE #5324]Replace deprecated class PosixParser with DefaultParser for CLI (#5325)
+
+* [ISSUE #5324]Replace deprecated class PosixParser with DefaultParser for CLI
+
+* fix bazel compile UpdateAccessConfigSubCommandTest testExecute failures
+
+* Fixed bazel compile UpdateAccessConfigSubCommandTest testExecute failures
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/rocketmq 3690049cb5c30d74ec82b76b016e23cdb57f1f82 63e4b6206045f731a2a0cd48
+>>>>>>>>>>>>>>>>>>>> 文件名: test/src/test/java/org/apache/rocketmq/test/container/GetMetadataReverseIT.java
+[ISSUE #5223] Enable checkstyle for test code (rocketmq-test) (#5224)
+
+* style(test):Enable checkstyle for test code
+
+* Sync bazel ignore list with renaming
+
+Co-authored-by: Zhanhui Li <lizhanhui@apache.org>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/rocketmq 8357cff10156860ffbedc276d79f90609aa3bb85 63e4b6236045f731a2a0cda8
+>>>>>>>>>>>>>>>>>>>> 文件名: namesrv/src/main/java/org/apache/rocketmq/namesrv/NamesrvController.java
+[ISSUE #5002]Fix code style in any net modules. (#4989)
+
+* optimize the memory usage in DefaultMappedFile:
+use AtomicIntegerFieldUpdater instead of AtomicInteger
+
+* fix code bug:
+if the initial cursor of listIterator equals zero,
+the previous element will always null.
+
+* modify constant name
+
+* fix excessive nesting
+
+* Update client/src/main/java/org/apache/rocketmq/client/impl/factory/MQClientInstance.java
+
+* update maven-surefire-plugin.version from 2.19.1 to 2.22.1
+
+* Revert "update maven-surefire-plugin.version from 2.19.1 to 2.22.1"
+
+This reverts commit 37fabe6e7805826895e224b0da22b57750c7e643.
+
+* Code Style: fix warn info from the code detector.
+
+* fix checkstyle: not use '*' for import.
+
+* Fix code style in any net modules.
+
+* change method name from topicRouteDataIsChange to topicRouteDataChanged in TopicRouteData.java
+
+* revert executeInvokeCallback method
+
+* Fix grammar issues
+
+Co-authored-by: shanpengyu <shanpengyu@bytedance.com>
+Co-authored-by: Aaron Ai <yangkun.ayk@gmail.com>
+Co-authored-by: Zhanhui Li <lizhanhui@apache.org>
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/rocketmq 3da7ea9c1bcee83ec7eb84b58eae718f121bbdaa 63e4b6266045f731a2a0cde5
+>>>>>>>>>>>>>>>>>>>> 文件名: acl/src/test/java/org/apache/rocketmq/acl/common/AclUtilsTest.java
+[Infra Improvement] Build And Run Unit Tests in Parallel (#4878)
+
+* Support build with Bazel (#4865)
+
+* Support build with Bazel, fixing tests to make them capable of running in concurrency and hermetic.
+
+* Make test cases capable of running in parallel. (#4874)
+<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>> apache/skywalking ffa499093802759544c74333bee02d9f48b3dc62 63e3463dfae162e3d7f42409
+>>>>>>>>>>>>>>>>>>>> 文件名: oap-server/server-storage-plugin/storage-elasticsearch-plugin/src/main/java/org/apache/skywalking/oap/server/storage/plugin/elasticsearch/query/zipkin/ZipkinQueryEsDAO.java
+[Feature] Zipkin module support BanyanDB storage. (#10004)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/skywalking e3d091ebd55d673db0214b4833a6dd147b5f8ef1 63e3463ffae162e3d7f4249a
+>>>>>>>>>>>>>>>>>>>> 文件名: oap-server/server-receiver-plugin/envoy-metrics-receiver-plugin/src/main/java/org/apache/skywalking/oap/server/receiver/envoy/als/k8s/K8SServiceRegistry.java
+Add Kubernetes support module to share codes between modules and reduce calls to Kubernetes API server (#9493)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/skywalking 6c6ef2466400e266978d62f99c9ed8be65d10791 63e34643fae162e3d7f4252e
+>>>>>>>>>>>>>>>>>>>> 文件名: oap-server/server-storage-plugin/storage-jdbc-hikaricp-plugin/src/main/java/org/apache/skywalking/oap/server/storage/plugin/jdbc/h2/dao/H2TraceQueryDAO.java
+Support autocomplete tags in logs query. (#8999)
+>>>>>>>>>>>>>>>>>>>> 文件名: oap-server/server-storage-plugin/storage-zipkin-elasticsearch-plugin/src/main/java/org/apache/skywalking/oap/server/storage/plugin/zipkin/elasticsearch/ZipkinTraceQueryEsDAO.java
+Support autocomplete tags in logs query. (#8999)
+<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>> apache/skywalking 1554c087f408aa8bbe34d37d001be8174b7a0e69 63e34643fae162e3d7f4257d
+>>>>>>>>>>>>>>>>>>>> 文件名: oap-server/server-storage-plugin/storage-iotdb-plugin/src/main/java/org/apache/skywalking/oap/server/storage/plugin/iotdb/IoTDBClient.java
+Refactor IoTDB storage plugin and bump up iotdb-session to 0.12.5 (#8755)
+<<<<<<<<<<<<<<<<<<<<
+
