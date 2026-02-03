@@ -1,0 +1,67 @@
+package edu.lu.uni.serval.gumtree;
+
+import com.github.gumtreediff.tree.ITree;
+import com.github.gumtreediff.tree.TreeContext;
+import edu.lu.uni.serval.gen.jdt.exp.ExpJdtTreeGenerator;
+import edu.lu.uni.serval.gen.jdt.rawToken.RawTokenJdtTreeGenerator;
+import org.eclipse.jdt.core.dom.ASTParser;
+
+import java.io.IOException;
+
+public class GumTreeGenerator {
+
+  public enum GumTreeType {
+    EXP_JDT,
+    RAW_TOKEN,
+  }
+
+  public ITree generateITreeForSourceCode(String content, GumTreeType type) {
+
+    ITree gumTree = null;
+    try {
+      TreeContext tc = null;
+      switch (type) {
+        case EXP_JDT:
+          tc = new ExpJdtTreeGenerator().generateFromString(content);
+          break;
+        case RAW_TOKEN:
+          tc = new RawTokenJdtTreeGenerator().generateFromString(content);
+          break;
+        default:
+          break;
+      }
+      if (tc != null) {
+        gumTree = tc.getRoot();
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return gumTree;
+  }
+
+  public ITree generateITreeForCodeBlock(String codeBlock, GumTreeType type) {
+    ITree gumTree = null;
+    try {
+      TreeContext tc = null;
+      switch (type) {
+        case EXP_JDT:
+          tc = new ExpJdtTreeGenerator().generateFromString(codeBlock, ASTParser.K_STATEMENTS);
+          break;
+        case RAW_TOKEN:
+          tc = new RawTokenJdtTreeGenerator().generateFromString(codeBlock, ASTParser.K_STATEMENTS);
+          break;
+        default:
+          break;
+      }
+
+      if (tc != null) {
+        gumTree = tc.getRoot();
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return gumTree;
+  }
+
+
+}

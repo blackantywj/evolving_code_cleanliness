@@ -1,0 +1,34 @@
+// Requires official MongoShell 3.6+
+db = db.getSiblingDB("github");
+db.getCollection("github_commit").aggregate(
+    [
+        {
+            "$match" : {
+                "_id" : ObjectId("63e2017c85d52e6dee1022e8")
+            }
+        },
+        {
+            "$unwind" : "$datas"
+        },
+        {
+            "$match" : {
+                "datas.fileName" : "dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/client/metadata/ServiceInstanceHostPortCustomizer.java"
+            }
+        },
+        {
+            "$group" : {
+                "_id" : {
+                    "_id" : "$_id",
+                    "repository" : "$repository",
+                    "commit_sha" : "$commit_sha"
+                },
+                "datas" : {
+                    "$push" : "$datas"
+                }
+            }
+        }
+    ],
+    {
+        "allowDiskUse" : false
+    }
+);
