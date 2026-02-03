@@ -36,7 +36,7 @@
 
 <div align="center">
 
-![Overview of CodeUltraFeedback](assets/CodeUltraFeedback.svg)
+![Overview of CodeUltraFeedback](assets/workflow.pdf)
 
 _Overview of CodeUltraFeedback dataset construction (see [Section II of our paper](https://arxiv.org/abs/2403.09032) for more details)._
 </div>
