@@ -1,7 +1,4 @@
 #!/bin/bash
-# "google/guice" "google/guava" "google/gson" "google/ExoPlayer" "google/dagger" "google/auto" "google/tsunami-security-scanner" "google/closure-compiler" "google/error-prone" "google/nomulus"
-# "apache/dubbo" "apache/kafka" "apache/incubator-seata" "apache/flink" "apache/skywalking" "apache/rocketmq" "apache/shardingsphere" "apache/hadoop" "apache/pulsar" "apache/druid" "apache/zookeeper"
-# spring-projects/spring-boot" "spring-projects/spring-framework" "spring-projects/spring-security" "spring-projects/spring-authorization-server" "spring-projects/spring-ai" "spring-projects/spring-data-jpa" "spring-projects/spring-kafka" "spring-projects/spring-batch" "spring-projects/spring-session" "spring-projects/spring-data-mongodb
 # "google/guava" "google/gson" "google/ExoPlayer*" "google/dagger" "google/guice*" "google/auto" "google/tsunami-security-scanner" "google/android-classyshark-" "google/closure-compiler" "google/agera*"
 # "apache/dubbo" "apache/kafka" "apache/incubator-seata" "apache/flink" "apache/skywalking" "apache/rocketmq" "apache/shardingsphere" "apache/hadoop" "apache/pulsar" "apache/druid" "apache/zookeeper"
 # 定义要传入search.py的参数列表
