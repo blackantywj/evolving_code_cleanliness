@@ -15,18 +15,16 @@
 <p align="center">
     <a href="#about">🤔 About</a> •
     <a href="#-getting-started">🚀 Getting Started</a> •
-    <a href="#models">🧠 Models</a> •
-    <a href="#datasets-and-benchmark">🤗 Datasets</a> •
+    <a href="#datasets">🤗 Datasets</a> •
     <a href="#-citation">📝 Citation</a>
 </p>
 
 > [!NOTE]
 >
-> [03-13-2024] 🔥 We release the first version of ECC and datasets.
+> [02-03-2026] 🔥 We release the first version of ECC and datasets.
 
 **Contact:** If you have any inquiries or want to raise an issue, please feel free to contact:
-- [Martin Weyssow](https://martin-wey.github.io/) at [martin.weyssow@umontreal.ca](mailto:martin.weyssow@umontreal.ca), or
-- [Aton Kamanda](https://atonkamanda.github.io/) at [atonkamanda@hotmail.com](mailto:atonkamanda@hotmail.com).
+- Vicent Yang at [wenjiey012@gmail.com](mailto:wenjiey012@gmail.com).
 
 ## About
 
