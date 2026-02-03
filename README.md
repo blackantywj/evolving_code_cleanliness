@@ -24,11 +24,15 @@
 > [02-03-2026] 🔥 We release the first version of ECC and datasets.
 
 **Contact:** If you have any inquiries or want to raise an issue, please feel free to contact:
-- Vicent Yang at [wenjiey012@gmail.com](mailto:wenjiey012@gmail.com).
+- Vincent Yang at [wenjiey012@gmail.com](mailto:wenjiey012@gmail.com).
 
 ## About
 
 <div align="center">
+
+In this paper, we selected 30 projects based on their star count and commit activity for an
+observational analysis of open-source projects from different communities. Our observational
+analysis focuses on statistically examining code modifications, contributor behaviors, and changes in statement types to reveal patterns in code cleanliness evolution. 
 
 ![Overview of ECC](assets/framework.png)
 
