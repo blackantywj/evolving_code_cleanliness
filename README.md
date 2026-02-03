@@ -124,22 +124,13 @@ The token **must not be hard-coded** in source files or committed to version con
 
 ---
 
-#### 1.2 Token Configuration via Environment Variables (Recommended)
+#### 1.2 Token Configuration
 
-##### Linux / macOS
+##### Write Tokens to Search.py (28 lines)
 
 ```bash
-export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxx
+TOKENS = [*************************************888] 
 ```
-
-##### Windows (PowerShell)
-
-```powershell
-setx GITHUB_TOKEN "ghp_xxxxxxxxxxxxxxxxx"
-```
-
-The program retrieves the token dynamically at runtime.
-
 ---
 
 ### 2. Project Structure
