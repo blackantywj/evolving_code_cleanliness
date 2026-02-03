@@ -6,7 +6,7 @@
 </div>
 
 <p align="center">
-    <a target="_blank" href="https://arxiv.org/abs/2403.09032"><img src="https://img.shields.io/badge/ArXiV-2404.09032-a55fed.svg"></a>
+    <a target="_blank" href="https://arxiv.org/abs"><img src="https://img.shields.io/badge/ArXiV-2404.09032-a55fed.svg"></a>
     <a target="_blank" href="https://huggingface.co/datasets/vincent20000/ECC-Dataset"><img src="https://img.shields.io/badge/https%3A%2F%2Fhuggingface.co%2Fdatasets%2Fvincent20000%2FECC-Dataset
     "></a>
     <a target="_blank" href="https://github.com/martin-wey/ECC/blob/main/LICENSE"><img src="https://img.shields.io/github/license/martin-wey/ECC
