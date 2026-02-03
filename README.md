@@ -137,7 +137,7 @@ TOKENS = [*************************************888]
 ```text
 .
 ├─ data_crawler
-├── search.py              # Main pipeline (data collection and analysis)
+├── search.py              # Main pipeline (data collection)
 ├── auto_plus.sh
 
 ├─ JavaPatchParser
@@ -267,7 +267,7 @@ Ensure the environment includes:
 #### 5.3 Running Batch Analysis
 
 ```bash
-bash run_batch.sh
+bash auto_plus.sh
 ```
 
 The script will:
@@ -292,63 +292,6 @@ The database connection must be configured in `connections.py`, e.g.:
 
 ```python
 MongoClient("mongodb://localhost:27017/")
-```
-
----
-
-### 7. Output Artifacts
-
-| File                     | Description                          |
-| ------------------------ | ------------------------------------ |
-| `result.txt`             | Detailed textual analysis            |
-| `result_right_json.json` | Changes improving metric compliance  |
-| `result_wrong_json.json` | Changes violating defined thresholds |
-
----
-
-### 8. Common Issues and Mitigation
-
-#### 8.1 Push Rejected by GitHub (GH013)
-
-**Cause**: Token detected in commit history.
-
-**Solution**:
-
-* Use environment variables
-* Remove secrets from Git history
-* Add `.env` to `.gitignore`
-
----
-
-#### 8.2 API Rate Limiting (HTTP 403)
-
-**Cause**: Exceeded GitHub rate limits.
-
-**Solution**:
-
-* Use multiple tokens
-* Enable periodic rate-limit monitoring
-* Introduce request delays
-
----
-
-#### 8.3 Repository Branch Heterogeneity
-
-Repositories may use `main`, `master`, or multi-branch structures (e.g., Apache projects).
-The pipeline dynamically adapts to branch configurations.
-
----
-
-### 9. Recommended Execution Order
-
-For reproducibility:
-
-```text
-1. Generate GitHub token
-2. Configure environment variables
-3. Specify repository and time window
-4. search → download → analysis → summary
-5. Use batch script for large-scale studies
 ```
 
 ---
