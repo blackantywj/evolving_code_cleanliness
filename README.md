@@ -105,20 +105,8 @@ We provide all the source code implemented to build ECC and evaluate LLMs on COD
 > 2. Tune your own SFT and DPO LLMs
 > 3. Evaluate LLMs on CODAL-Bench
 
-## Models
-
-| Model                             | Checkpoint                                                                      | Size | CODAL-Bench GPT-3.5<br/>(G-3.5, G-4) | CODAL-Bench GPT-4 <br/>(G-4) | HumanEval+<br/>(k=1, k=10) | License                                      |
-|:----------------------------------|:--------------------------------------------------------------------------------|:----:|:------------------------------------:|:----------------------------:|:--------------------------:|:---------------------------------------------|
-| **CodeLlama-7B-Instruct**         | 🤗 [HF Link](https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf)         | `7B` |             6.00 / 5.46              |             4.72             |        37.9 / 60.4         | [Llama2](https://ai.meta.com/llama/license/) |
-| **CodeLlama-7B-Instruct-SFT**     | 🤗 [HF Link](https://huggingface.co/coseal/CodeLlama-7B-Instruct-sft-qlora)     | `7B` |             6.51 / 5.83              |             5.84             |    **51.2** / **82.9**     | [Llama2](https://ai.meta.com/llama/license/) |
-| **CodeLlama-7B-Instruct-DPO**     | 🤗 [HF Link](https://huggingface.co/coseal/CodeLlama-7B-Instruct-dpo-qlora)     | `7B` |             7.15 / 6.79              |             5.08             |        42.3 / 80.5         | [Llama2](https://ai.meta.com/llama/license/) |
-| **CodeLlama-7B-Instruct-SFT+DPO** | 🤗 [HF Link](https://huggingface.co/coseal/CodeLlama-7B-Instruct-sft-dpo-qlora) | `7B` |         **7.36** / **7.08**          |           **5.85**           |        43.1 / 75.6         | [Llama2](https://ai.meta.com/llama/license/) |
-
-## Datasets and Benchmark
-- 🤗 **ECC**: [https://huggingface.co/datasets/coseal/ECC](https://huggingface.co/datasets/coseal/ECC)
-- 🤗 **ECC binarized**: [https://huggingface.co/datasets/coseal/ECC_binarized](https://huggingface.co/datasets/coseal/ECC_binarized)
-- 🤗 **CODAL-Bench**: [https://huggingface.co/datasets/coseal/codal-bench](https://huggingface.co/datasets/coseal/codal-bench)
-- 🤗 **Magicoder-Evol-Instruct-110K-sft**: [https://huggingface.co/datasets/coseal/Magicoder-Evol-Instruct-110K-sft](https://huggingface.co/datasets/coseal/Magicoder-Evol-Instruct-110K-sft)
+## Datasets
+- 🤗 **ECC-dataset**: [https://huggingface.co/datasets/coseal/ECC_binarized](https://huggingface.co/datasets/coseal/ECC_binarized)
 
 ## 📝 Citation
 ```bibtex
