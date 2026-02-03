@@ -64,13 +64,24 @@ consideration and possible revision?
 > In this question, we use the ASTs to analyze statement types and guide developers in making effective code modifications.
 Our work features two main contributions: `ECC` and `ECC-Dataset`, a code repo and dataset for evolving trends in cleanliness of Open Source Projects.
 
-`ECC` is a preference dataset of complex coding instructions to align LLMs to coding preferences. 
-It has an analogous construction procedure to [UltraFeedback](https://github.com/OpenBMB/UltraFeedback), featuring:
+The primary contributions of this work encompass:
 
-* ✨ **Complex instructions**: ECC is based on a 10k subset of [MagiCoder Evol-Instruct](https://huggingface.co/datasets/ise-uiuc/Magicoder-Evol-Instruct-110K) comprising open domain complex coding instructions.
-* ✨ **Coding preferences**: ECC includes 5 coding preferences, which are crucial to evaluate the broader capabilities of LLMs: **instruction-following**, **code explanation**, **code complexity and efficiency**, **code readability**, and **coding style**.
-* ✨ **Large pool of LLMs**: We use a large pool of 14 LLMs from 8 model families to generate responses to the 10k instructions to consider diverse writing and coding styles.
-* ✨ **LLM-as-a-judge and AI feedback**: We use GPT-3.5 as a judge for evaluating LLM responses, which annotates each response with both numerical and textual feedback. The AI feedback data can be leveraged for various applications, including model alignment through RLAIF, tuning a critic LLM, and more.
+* ✨ Conducting the first large-scale empirical study to assess evolving trends of open-source projects
+from the code cleanliness perspective. Our analysis of the open-source projects from Apache,
+Google, and Spring, involving 84,268,300 lines, 4,356,940 functions, and 197,461 file pairs, revealed
+that most of the code within these projects has changed within standard limits, aligning with
+the clean code standard.
+* ✨ Through an examination of committer information related to positive and negative code changes,
+we discovered a higher frequency of positive changes during manual code reviews compared to
+automatic additions to the codebase, highlighting the significant role of human developers in
+code review responsibilities. 
+* ✨ Our analysis of the word clouds from code changes shows that refactoring is key to improving
+code cleanliness, aligning with principles proposed by Martin. However, not all contributors’
+refactoring efforts effectively align with clean code standards. Common terms like "support," "im-
+prove," and "enhance" often appear in commit messages but can sometimes introduce complexity,
+misaligning with clean code goals.
+* ✨ Our analysis results guide the targeted code review by highlighting the different degrees of
+emphasis on modified statement types within each referenced indicator of clean code.
 
 `CODAL-Bench` is a benchmark of 500 coding problems (_100 per coding preference_). We use LLM-as-a-judge with reference-guided single-answer grading using GPT-3.5 or GPT-4 to evaluate LLM alignment. 
 The approach enables the judge LLM to provide consistent ratings and evaluate each LLM individually (similar to [MT-Bench](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge)). 
