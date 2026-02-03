@@ -136,17 +136,17 @@ TOKENS = [*************************************888]
 
 ```text
 .
+├─ data_crawler
 ├── search.py              # Main pipeline (data collection and analysis)
-├── parser_python.py
-├── parser_java.py
-├── parser_js.py
-├── parser_c.py
-├── parser_cpp.py
-├── connections.py         # MongoDB configuration
-├── run_batch.sh           # Batch execution script (screen-based)
-├── result.txt
-├── result_right_json.json
-├── result_wrong_json.json
+├── auto_plus.sh
+
+├─ JavaPatchParser
+├── Circle
+├─── Src
+├──── main
+├──── test
+├───── java
+├───── EntranceTest.java (Main)
 ```
 
 ---
@@ -156,7 +156,7 @@ TOKENS = [*************************************888]
 The analysis pipeline consists of the following stages:
 
 ```text
-Commit Discovery  →  File Download  →  Code Parsing  →  Metric Analysis  →  Aggregation
+Commit Discovery  →  File Download  →  Code Parsing  →  Metric Analysis
 ```
 
 Corresponding functions:
@@ -165,9 +165,9 @@ Corresponding functions:
 | -------------------------- | ------------- |
 | Commit retrieval           | `search()`    |
 | File download              | `download()`  |
-| Code analysis              | `analysis()`  |
-| Statistical summary        | `summary()`   |
-| Threshold-based evaluation | `threshold()` |
+| Code analysis              | `entrance.calcAttributes`  |
+| Statistical summary        | `entrance.JavaPatchParser`  |
+| Threshold-based evaluation | `entrance.print(Metrics)+analyse(Metrics)` |
 
 ---
 
