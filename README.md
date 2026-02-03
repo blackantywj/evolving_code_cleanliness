@@ -83,8 +83,16 @@ misaligning with clean code goals.
 * ✨ Our analysis results guide the targeted code review by highlighting the different degrees of
 emphasis on modified statement types within each referenced indicator of clean code.
 
-`CODAL-Bench` is a benchmark of 500 coding problems (_100 per coding preference_). We use LLM-as-a-judge with reference-guided single-answer grading using GPT-3.5 or GPT-4 to evaluate LLM alignment. 
-The approach enables the judge LLM to provide consistent ratings and evaluate each LLM individually (similar to [MT-Bench](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge)). 
+`ECC-Dataset`: Given that Google, Apache, and Spring-projects have been widely
+referenced in previous studies, our focus lies on open-source projects from these three
+communities. For project selection, we utilize GitHub’s advanced search 15 to filter projects by
+language and organization name. From this pool, we further narrow the selection based on the
+number of stars and commits in recent years, as shown in figure of workflow, ultimately selecting the top 10
+projects from each organization. These well-known open-source projects have also been widely
+studied in the literature. Our analysis covers code master commits made between
+January 1, 2022, and December 15, 2024. We utilized ASTs to establish mapping relationships
+between files and functions before and after code changes. This resulted in a dataset comprising
+197,461 pairs of files (before vs. after), 4,356,94 functions, and 84,268,300 code lines.
 
 ## 🚀 Getting Started 
 
