@@ -297,10 +297,10 @@ MongoClient("mongodb://localhost:27017/")
 ### 6. Data Analysis
 
 ```Java
-@Test
-public void test_calcAttributes() throws IOException {
-  entrance.calcAttributes(); // 计算所有指标
-}
+    @Test
+    public void test_calcAttributes() throws IOException {
+      entrance.calcAttributes(); // 计算所有指标
+    }
 ```
 
 ### 7. Data Analysis with threshold
