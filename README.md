@@ -21,12 +21,8 @@
 </p>
 
 > [!NOTE]
-> 
-> [03-17-2024] 🔥 We updated our code to support Claude-3 models for grading.  [CODAL-Bench](https://huggingface.co/datasets/coseal/codal-bench) now includes `claude-3-sonnet-20240229` responses.
- > 
-> [03-13-2024] 🏆 We are preparing a leaderboard for CODAL-Bench, stay tuned!
 >
-> [03-13-2024] 🔥 We release the first version of ECC and CODAL-Bench.
+> [03-13-2024] 🔥 We release the first version of ECC and datasets.
 
 **Contact:** If you have any inquiries or want to raise an issue, please feel free to contact:
 - [Martin Weyssow](https://martin-wey.github.io/) at [martin.weyssow@umontreal.ca](mailto:martin.weyssow@umontreal.ca), or
@@ -41,14 +37,30 @@
 _Overview of ECC workflow (see [Section II of our paper](https://arxiv.org/abs/2403.09032) for more details)._
 </div>
 
-> Given the increasing coding capabilities of large language models (LLMs), the following question emerges:
+> Our investigation addresses the following research questions:
 > 
-> _How well do these capabilities align with the expectations of developers, particularly concerning non-functional requirements such as code readability, efficiency, and adherence to best practices?_
+> RQ-1. Do open-source projects consistently adapt to cleaner modifications, and which met-
+rics are predominantly emphasized by maintainers during the upkeep of these projects?
 >
-> We believe existing benchmarks relying on automated metrics and static analysis tools are insufficient and too rigid for evaluating the broader capabilities of LLMs. 
-> Instead, we believe LLM-as-a-judge offers a more nuanced strategy (_or proxy to human evaluation_) to evaluate LLMs while effectively considering the intricacies of natural and programming languages.
-
-Our work features two main contributions: `ECC` and `CODAL-Bench`, a dataset and benchmark for aligning LLMs to coding preferences and evaluating their alignment using LLM-as-a-judge.
+> This question explores the adherence of open-source project code to clean code standards, focus-
+ing on eight perspectives: cyclomatic complexity (MethodCircles), LOCs in functions (Method-
+Rows), LOCs in files (FileRows), code line lengths (LineChars), number of try-catch statements
+(TryCatchNums), and the naming of classes, methods, and parameters.
+> 
+> RQ-2. To what degree are project maintainers committed to upholding clean code princi-
+ples? Additionally, which specific categories of code modifications affect the code cleanli-
+ness and necessitate particular scrutiny?
+> 
+> We categorize standard and non-standard modifica-
+tions into positive and negative changes for this question, examining commit information and
+generating word clouds.
+> RQ-3. How significantly do alterations in code statements affect overall code cleanliness
+when striving to write clean code? Moreover, regarding different metrics used to measure
+clean code, which types of statement-level changes should be given priority for careful
+consideration and possible revision?
+> 
+> In this question, we use the ASTs to analyze statement types and guide developers in making effective code modifications.
+Our work features two main contributions: `ECC` and `ECC-Dataset`, a code repo and dataset for evolving trends in cleanliness of Open Source Projects.
 
 `ECC` is a preference dataset of complex coding instructions to align LLMs to coding preferences. 
 It has an analogous construction procedure to [UltraFeedback](https://github.com/OpenBMB/UltraFeedback), featuring:
