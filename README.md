@@ -7,7 +7,8 @@
 
 <p align="center">
     <a target="_blank" href="https://arxiv.org/abs/2403.09032"><img src="https://img.shields.io/badge/ArXiV-2404.09032-a55fed.svg"></a>
-    <a target="_blank" href="https://huggingface.co/datasets/coseal/ECC"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-ECC-%23ff8811.svg"></a>
+    <a target="_blank" href="https://huggingface.co/datasets/vincent20000/ECC-Dataset"><img src="https://img.shields.io/badge/https%3A%2F%2Fhuggingface.co%2Fdatasets%2Fvincent20000%2FECC-Dataset
+    "></a>
     <a target="_blank" href="https://github.com/martin-wey/ECC/blob/main/LICENSE"><img src="https://img.shields.io/github/license/martin-wey/ECC
 "></a>
 </p>
@@ -355,7 +356,7 @@ For reproducibility:
 ---
 
 ## Datasets
-- 🤗 **ECC-dataset**: [https://huggingface.co/datasets/coseal/ECC_binarized](https://huggingface.co/datasets/coseal/ECC_binarized)
+- 🤗 **ECC-dataset**: [https://huggingface.co/datasets/vincent20000/ECC-Dataset](https://huggingface.co/datasets/vincent20000/ECC-Dataset)
 
 ## 📝 Citation
 ```bibtex
