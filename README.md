@@ -294,6 +294,24 @@ The database connection must be configured in `connections.py`, e.g.:
 MongoClient("mongodb://localhost:27017/")
 ```
 
+### 6. Data Analysis
+
+```Java
+@Test
+public void test_calcAttributes() throws IOException {
+  entrance.calcAttributes(); // 计算所有指标
+}
+```
+
+### 7. Data Analysis with threshold
+
+```Java
+   @Test
+   public void test_analyseMethodCircles() throws IOException {
+     // entrance.printMethodCircles(10); // 打印圈复杂度的印详细和汇总
+     entrance.analyseMethodCircles(10); // 根据圈复杂度分析,并输出统计结果
+   }
+```
 ---
 
 ## Datasets
