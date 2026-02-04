@@ -327,13 +327,5 @@ MongoClient("mongodb://localhost:27017/")
 - 🤗 **ECC-dataset**: [https://huggingface.co/datasets/vincent20000/ECC-Dataset](https://huggingface.co/datasets/vincent20000/ECC-Dataset)
 
 ## 📝 Citation
-```bibtex
-@misc{weyssow2024ECC,
-  title={ECC: An LLM-as-a-Judge Dataset for Aligning Large Language Models to Coding Preferences}, 
-  author={Martin Weyssow and Aton Kamanda and Houari Sahraoui},
-  year={2024},
-  eprint={2403.09032},
-  archivePrefix={arXiv},
-  primaryClass={cs.SE}
-}
+```
 ```
