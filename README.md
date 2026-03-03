@@ -263,6 +263,7 @@ Ensure the environment includes:
 * `requests`
 * `pymongo`
 * `py4j`
+* `tree_sitter`
 
 ---
 
