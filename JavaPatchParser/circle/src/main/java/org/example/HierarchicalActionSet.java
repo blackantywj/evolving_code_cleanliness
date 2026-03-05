@@ -1,10 +1,10 @@
 package org.example;
 
-import com.github.gumtreediff.actions.model.*;
-import com.github.gumtreediff.tree.ITree;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
 import org.apache.commons.collections4.CollectionUtils;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.Block;
@@ -15,10 +15,16 @@ import org.example.common.Segment;
 import org.example.domain.ChangeMap;
 import org.example.utils.Helper;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import com.github.gumtreediff.actions.model.Action;
+import com.github.gumtreediff.actions.model.Delete;
+import com.github.gumtreediff.actions.model.Insert;
+import com.github.gumtreediff.actions.model.Move;
+import com.github.gumtreediff.actions.model.Update;
+import com.github.gumtreediff.tree.ITree;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Hierarchical code change actions of GumTree results
@@ -291,20 +297,20 @@ public class HierarchicalActionSet implements Comparable<HierarchicalActionSet> 
 }
 
 
-function createCircleChangeMap() {
-    changeMap = new ChangeMap();
-    for each actionSet in actionSetList {
-        oldCircle = calculateOldCircle(actionSet);
-        newCircle = calculateNewCircle(actionSet);
+// function createCircleChangeMap() {
+//     changeMap = new ChangeMap();
+//     for each actionSet in actionSetList {
+//         oldCircle = calculateOldCircle(actionSet);
+//         newCircle = calculateNewCircle(actionSet);
         
-        if oldCircle != newCircle {
-            changeMap.add(actionSet.getAstNodeType(), actionSet.getActionName());
-        }
+//         if oldCircle != newCircle {
+//             changeMap.add(actionSet.getAstNodeType(), actionSet.getActionName());
+//         }
         
-        // 深度分析子动作
-        for each subAction in actionSet.getSubActions() {
-            changeMap.add(subAction.createCircleChangeMap());
-        }
-    }
-    return changeMap;
-}
+//         // 深度分析子动作
+//         for each subAction in actionSet.getSubActions() {
+//             changeMap.add(subAction.createCircleChangeMap());
+//         }
+//     }
+//     return changeMap;
+// }
