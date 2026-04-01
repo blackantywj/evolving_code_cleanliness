@@ -6,7 +6,7 @@
 </div>
 
 <p align="center">
-    <a target="_blank" href="https://dl.acm.org/doi/10.1145/3800680"><img src="https://img.shields.io/badge/build-passing-brightgreen"></a>
+    <a target="_blank" href="https://dl.acm.org/doi/10.1145/3800680"><img src="https://img.shields.io/badge/TOSEM-ACCEPT"></a>
     <a target="_blank" href="https://huggingface.co/datasets/vincent20000/ECC-Dataset"><img src="https://img.shields.io/badge/https%3A%2F%2Fhuggingface.co%2Fdatasets%2Fvincent20000%2FECC-Dataset
     "></a>
 </p>
