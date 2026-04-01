@@ -42,25 +42,16 @@ _Overview of ECC workflow (see [Section II of our paper](https://arxiv.org/abs/2
 
 > Our investigation addresses the following research questions:
 > 
-> RQ-1. Do open-source projects consistently adapt to cleaner modifications, and which met-
-rics are predominantly emphasized by maintainers during the upkeep of these projects?
+> RQ-1. Do open-source projects consistently adapt to cleaner modifications, and which metrics are predominantly emphasized by maintainers during the upkeep of these projects?
 >
-> This question explores the adherence of open-source project code to clean code standards, focus-
-ing on eight perspectives: cyclomatic complexity (MethodCircles), LOCs in functions (Method-
-Rows), LOCs in files (FileRows), code line lengths (LineChars), number of try-catch statements
-(TryCatchNums), and the naming of classes, methods, and parameters.
+> This question explores the adherence of open-source project code to clean code standards, focusing on eight perspectives: cyclomatic complexity (MethodCircles), LOCs in functions (Method Rows), LOCs in files (FileRows), code line lengths (LineChars), number of try-catch statements (TryCatchNums), and the naming of classes, methods, and parameters.
 > 
-> RQ-2. To what degree are project maintainers committed to upholding clean code princi-
-ples? Additionally, which specific categories of code modifications affect the code cleanli-
-ness and necessitate particular scrutiny?
+> RQ-2. To what degree are project maintainers committed to upholding clean code principles? Additionally, which specific categories of code modifications affect the code cleanliness and necessitate particular scrutiny?
 > 
-> We categorize standard and non-standard modifica-
-tions into positive and negative changes for this question, examining commit information and
+> We categorize standard and non-standard modifications into positive and negative changes for this question, examining commit information and
 generating word clouds.
-> RQ-3. How significantly do alterations in code statements affect overall code cleanliness
-when striving to write clean code? Moreover, regarding different metrics used to measure
-clean code, which types of statement-level changes should be given priority for careful
-consideration and possible revision?
+>
+> RQ-3. How significantly do alterations in code statements affect overall code cleanliness when striving to write clean code? Moreover, regarding different metrics used to measure clean code, which types of statement-level changes should be given priority for careful consideration and possible revision?
 > 
 > In this question, we use the ASTs to analyze statement types and guide developers in making effective code modifications.
 Our work features two main contributions: `ECC` and `ECC-Dataset`, a code repo and dataset for evolving trends in cleanliness of Open Source Projects.
