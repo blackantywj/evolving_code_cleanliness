@@ -322,4 +322,11 @@ MongoClient("mongodb://localhost:27017/")
 
 ## 📝 Citation
 ```
+@article{yan2026evolving,
+  title={Evolving Trends in Cleanliness of Open Source Projects},
+  author={Yan, Dapeng and Yang, Wenjie and Gao, Zhipeng and Liu, Kui and Cai, Zhikuang and Xie, Xiaoyuan and Liu, Zhiming},
+  journal={ACM Transactions on Software Engineering and Methodology},
+  year={2026},
+  publisher={ACM New York, NY}
+}
 ```
